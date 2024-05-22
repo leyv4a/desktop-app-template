@@ -2,10 +2,9 @@ const { app, BrowserWindow, Menu , screen } = require('electron');
 const path = require('node:path');
 const express = require('express');
 const userRoutes = require('./app/routes/userRoutes')
-
+const {logToFile} = require('./app/utils/logger')
 const cors = require('cors');
-const fs = require('fs');
-const myConsole = new console.Console(fs.createWriteStream("./logs.txt"));
+
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -62,7 +61,7 @@ expressApp.use(express.json());
 expressApp.use('/api', userRoutes);
 
 expressApp.listen(port, () => {
-  myConsole.log(`database.js[67]Express server listening at http://localhost:${port}`);
+  logToFile(`Express server listening at http://localhost:${port}`);
 });
 
 });
