@@ -1,5 +1,5 @@
 const UserModel = require('../model/user');
-const {logToFile} = require('../utils/logger')
+const logToFile = require('../utils/logger')
 
 class UserController {
   static async getAllUsers(req, res) {

@@ -2,7 +2,7 @@ const { app, BrowserWindow, Menu , screen } = require('electron');
 const path = require('node:path');
 const express = require('express');
 const userRoutes = require('./app/routes/userRoutes')
-const {logToFile} = require('./app/utils/logger')
+const logToFile = require('./app/utils/logger')
 const cors = require('cors');
 
 

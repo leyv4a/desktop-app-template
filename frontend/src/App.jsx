@@ -7,10 +7,7 @@ function App() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    // console.log(JSON.stringify({
-    //   name: name,
-    //   email: email,
-    // }))
+  
     addUser();
   }
 
@@ -29,7 +26,6 @@ function App() {
     })
     .then((data) => {
       setUsers(data);
-      console.log('Datos recibidos:', data); // Muestra los datos recibidos en la consola
     })
     .catch((error) => console.error(error));
   }
